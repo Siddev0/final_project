@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'user_dashboard' %}">My Tasks</a>
+    </div>
+</nav>
+{% endblock %}

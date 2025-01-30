@@ -1,0 +1,31 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block content %}
+{{ block.super }}
+<h2>All Tasks</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Assigned To</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.assigned_to.username }}</td>
+            <td>{{ task.due_date|date:"Y-m-d H:i" }}</td>
+            <td>{{ task.get_status_display }}</td>
+            <td>
+                <a href="{% url 'admin_task_edit' task.pk %}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{% url 'admin_task_delete' task.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

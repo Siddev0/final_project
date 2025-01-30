@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'admin_dashboard' %}">Admin Panel</a>
+    </div>
+</nav>
+{% endblock %}
